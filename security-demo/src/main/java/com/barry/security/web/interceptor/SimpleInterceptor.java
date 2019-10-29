@@ -16,7 +16,7 @@ public class SimpleInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("<=======SimpleInterceptor preHandle========>");
-        return false;
+        return true;
     }
 
     @Override

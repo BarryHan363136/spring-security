@@ -51,15 +51,10 @@ public class ControllerUriTest {
     @Test
     public void whenFileUpload() throws Exception {
         String result = mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upload")
-                .file(new MockMultipartFile("file","test.txt","multipart/form-data","hello word".getBytes())))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andReturn().getResponse().getContentAsString();
-
-//        String result = mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upload")
-//                .file(new MockMultipartFile("file", "test.txt",
-//                        "multipart/form-data", "this a mock multipart file testing".getBytes("UTF-8"))))
-//        .andExpect(MockMvcResultMatchers.status().isOk())
-//                .andReturn().getResponse().getContentType();
+                .file(new MockMultipartFile("file", "test.txt",
+                        "multipart/form-data", "this a mock multipart file testing".getBytes("UTF-8"))))
+        .andExpect(MockMvcResultMatchers.status().isOk())
+                .andReturn().getResponse().getContentType();
         log.info("====whenFileUpload=======>"+result);
     }
 
