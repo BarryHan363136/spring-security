@@ -50,7 +50,7 @@ public class ControllerUriTest {
 
     @Test
     public void whenFileUpload() throws Exception {
-        String result = mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upload")
+        String result = mockMvc.perform(MockMvcRequestBuilders.multipart("/upload")
                 .file(new MockMultipartFile("file", "test.txt",
                         "multipart/form-data", "this a mock multipart file testing".getBytes("UTF-8"))))
         .andExpect(MockMvcResultMatchers.status().isOk())

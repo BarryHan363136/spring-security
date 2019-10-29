@@ -18,10 +18,10 @@ public class MultipartFileHandlerController {
             @RequestPart(value = "json") JsonPojo pojo,
             @RequestParam(value = "some-random") String random,
             @RequestParam(value = "data", required = false) List<MultipartFile> files) {
-        System.out.println(random);
-        System.out.println(pojo.getJson());
+        System.out.println("=====saveAuto-1=======>"+random);
+        System.out.println("=====saveAuto-2=======>"+pojo.getJson());
         for (MultipartFile file : files) {
-            System.out.println(file.getOriginalFilename());
+            System.out.println("=====saveAuto-3=======>"+file.getOriginalFilename());
         }
         return "success";
     }
