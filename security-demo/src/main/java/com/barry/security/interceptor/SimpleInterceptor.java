@@ -1,4 +1,4 @@
-package com.barry.security.web.interceptor;
+package com.barry.security.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,17 +15,17 @@ public class SimpleInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        logger.info("<=======SimpleInterceptor preHandle========>");
+        //logger.info("<=======SimpleInterceptor preHandle========>");
         return true;
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        logger.info("<=======SimpleInterceptor postHandle========>");
+        //logger.info("<=======SimpleInterceptor postHandle========>");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        logger.info("<=======SimpleInterceptor afterCompletion========>");
+        //logger.info("<=======SimpleInterceptor afterCompletion========>");
     }
 }

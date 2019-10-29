@@ -1,7 +1,7 @@
-package com.barry.security.web.config;
+package com.barry.security.config;
 
-import com.barry.security.web.filter.TimeFilter;
-import com.barry.security.web.interceptor.SimpleInterceptor;
+import com.barry.security.filter.TimeFilter;
+import com.barry.security.interceptor.SimpleInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

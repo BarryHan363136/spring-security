@@ -1,8 +1,8 @@
-package com.barry.security.web.filter;
+package com.barry.security.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+
 import javax.servlet.*;
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ public class TimeFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        logger.info("<=======TimeFilter init==========>");
+        //logger.info("<=======TimeFilter init==========>");
     }
 
     @Override
@@ -21,7 +21,7 @@ public class TimeFilter implements Filter {
         long start = System.currentTimeMillis();
         filterChain.doFilter(servletRequest, servletResponse);
         long end = System.currentTimeMillis();
-        logger.info("<=======TimeFilter doFilter==========>耗时:"+(end-start));
+        //logger.info("<=======TimeFilter doFilter==========>耗时:"+(end-start));
     }
 
     @Override
