@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.barry.security</groupId>
             <artifactId>security-core</artifactId>
-            <version>${spring-security-version}</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
