@@ -1,5 +1,6 @@
 package com.barry.security.controller;
 
+import com.barry.security.base.AbstractBaseService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,22 +22,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * https://www.iteye.com/blog/tobato-2315174
  * */
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class ControllerUriTest {
+
+public class ControllerUriTest extends AbstractBaseService {
 
     private static final Logger log = LoggerFactory.getLogger(ControllerUriTest.class);
-
-    @Autowired
-    private WebApplicationContext wac;
-
-    private MockMvc mockMvc;
-
-    @Before
-    public void setup(){
-        mockMvc = MockMvcBuilders
-                .webAppContextSetup(wac).build();
-    }
 
     @Test
     public void whenQuery() throws Exception {
@@ -45,7 +34,6 @@ public class ControllerUriTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(3));
-
     }
 
     @Test
@@ -66,7 +54,8 @@ public class ControllerUriTest {
 
         mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upload2")
                 .file(firstFile)
-                .file(secondFile).file(jsonFile)
+                .file(secondFile)
+                .file(jsonFile)
                 .param("some-random", "4"))
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(content().string("success"));
